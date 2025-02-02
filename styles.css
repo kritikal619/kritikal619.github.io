@@ -1,0 +1,298 @@
+body {
+  padding:1.5em;
+  background: #f5f5f5
+}
+
+table {
+  margin-top: 30px;
+  border: 1px #a39485 solid;
+  font-size: .9em;
+  box-shadow: 0 2px 5px rgba(0,0,0,.25);
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
+  max-width: 455px; /* 혹은 다른 적절한 값 */
+  margin: 0 auto; /
+}
+
+th {
+  text-align: left;
+}
+  
+thead {
+  font-weight: bold;
+  color: #fff;
+  background: #73685d;
+}
+  
+ td, th {
+  padding: 1em .5em;
+  vertical-align: middle;
+}
+  
+ td {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  background: #fff;
+}
+
+a {
+  color: #73685d;
+}
+  
+ @media all and (max-width: 100px) {
+    
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  
+  th {
+    text-align: right;
+  }
+  
+  table {
+    position: relative; 
+    padding-bottom: 0;
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+  }
+  
+  thead {
+    float: left;
+    white-space: nowrap;
+  }
+  
+  tbody {
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    white-space: nowrap;
+  }
+  
+  tr {
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  th {
+    border-bottom: 1px solid #a39485;
+  }
+  
+  td {
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  
+  }
+
+  #search-container {
+      margin-top: 20px; /* 헤딩과 검색창 사이의 간격 */
+      margin-bottom: 20px;
+  }
+    /* 검색 입력 필드 스타일 */
+    #search-input {
+      width: 100%; /* 전체 너비 사용 */
+      max-width: 455px; /* 최대 너비 제한 */
+      padding: 10px; /* 패딩 */
+      border: 2px solid #a39485; /* 테두리 */
+      border-radius: 5px; /* 테두리 둥글게 */
+      box-sizing: border-box; /* 박스 크기 계산 방식 */
+      
+    }
+    
+    /* 검색 버튼 스타일 */
+    #search-button {
+      padding: 10px 20px; /* 버튼 내부의 상하, 좌우 패딩 */
+      border: none; /* 테두리 없음 */
+      border-radius: 5px; /* 테두리 둥글게 */
+      background-color: #73685d; /* 배경 색 */
+      color: #fff; /* 글자 색 */
+      cursor: pointer; /* 마우스 오버 시 커서 변경 */
+      margin-left: -4px; /* 입력 필드와의 간격 조정 */
+      
+    }
+    
+    #search-button:hover {
+      background-color: #5a5147; /* 버튼 호버 시 색상 변경 */
+    }
+    /* 페이지네이션 컨테이너 스타일 */
+    /* 페이지네이션 컨테이너 스타일 */
+  /* 페이지네이션 컨테이너 스타일 */
+#pagination {
+text-align: center; /* 중앙 정렬 */
+margin-top: 20px; /* 테이블과의 상단 여백 */
+}
+
+
+/* 페이지네이션 버튼 기본 스타일 */
+#pagination button {
+padding: 5px 10px; /* 패딩 */
+margin-right: 4px; /* 오른쪽 마진 */
+background-color: #73685d; /* 배경 색상 */
+color: white; /* 글자 색상 */
+border: none; /* 테두리 제거 */
+border-radius: 5px; /* 둥근 모서리 */
+cursor: pointer; /* 클릭 가능한 커서 모양 */
+}
+
+/* 호버 상태 버튼 스타일 */
+#pagination button:hover {
+background-color: #5a5147; /* 호버 시 배경 색상 변경 */
+}
+
+/* 현재 페이지를 나타내는 버튼 스타일 */
+#pagination .active {
+background-color: #a39485; /* 활성 페이지 버튼 색상 */
+}
+
+/*html, body{
+margin: 0;
+padding:0;
+}*/
+
+
+#wrap {
+display: block; /* 기본 블록 레이아웃 */
+background-color: #f2f2f2;
+}
+
+footer {
+width: 100%;
+height: 90px;
+border-top: 1px solid #c4c4c4;
+padding-top: 15px;
+color: #808080;
+font-size: 11px;
+background-color: #f2f2f2;
+}
+footer a {
+display: inline-block;
+margin: 0 20px 10px 20px;
+color: #808080; font-size: 11px;
+}
+
+footer a:visited {
+color: #808080
+}
+
+footer p {
+margin-top: 0; margin-bottom: 0;
+}
+
+footer p span {
+display: inline-block;
+margin-left: 20px;
+}
+
+#copy-button {
+margin-left: 10px; /* 이메일과 버튼 사이 간격 */
+padding: 5px 10px;
+background-color: #73685d;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 10px;
+}
+
+#copy-button:hover {
+background-color: #5a5147; /* 호버 시 색상 변경 */
+}
+
+#question {
+color:#777676
+}
+
+.modal {
+display: none; /* 기본적으로 숨김 */
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+justify-content: center;
+align-items: center;
+}
+
+.modal-content {
+background: #fff;
+padding: 20px;
+border-radius: 18px;
+text-align: center;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+width: 80%
+}
+
+.close-btn {
+position: absolute;
+top: 10px;
+right: 15px;
+font-size: 24px;
+font-weight: bold;
+color: #333;
+cursor: pointer;
+}
+
+#confirm {
+margin-left: 10px; 
+padding: 5px 10px;
+background-color: #73685d;
+color: #fff;
+border: none;
+border-radius: 15px;
+cursor: pointer;
+font-size: 13px;
+width: 90%;
+}
+
+#installPrompt {
+  display: none; /* 기본적으로 숨김 */
+  position: fixed; /* 화면에 고정 */
+  bottom: 20px; /* 아래에서 20px */
+  right: 20px; /* 오른쪽에서 20px */
+  background: white; /* 배경색 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 그림자 */
+  border-radius: 10px; /* 둥근 모서리 */
+  padding: 16px; /* 내부 여백 */
+  z-index: 1000; /* 우선순위 높게 설정 */
+  animation: fadeIn 0.3s ease-in-out; /* 부드러운 등장 애니메이션 */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+#installPrompt div {
+  display: flex; /* Flexbox 활성화 */
+  justify-content: space-between; /* 버튼 간 대칭 간격 설정 */
+}
+
+#installConfirm {
+  padding: 5px 10px; /* 버튼 안쪽 여백 */
+  background-color: #73685d; /* 버튼 배경 색상 */
+  color: white; /* 버튼 글자 색상 */
+  border: none; /* 테두리 제거 */
+  border-radius: 5px; /* 둥근 모서리 */
+  cursor: pointer; /* 클릭 가능한 모양 */
+  width: 100px; /* 버튼 크기 고정 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+#installCancel {
+  padding: 5px 10px; /* 버튼 안쪽 여백 */
+  background-color: #b6b6b6; /* 버튼 배경 색상 */
+  color: rgb(102, 102, 102); /* 버튼 글자 색상 */
+  border: none; /* 테두리 제거 */
+  border-radius: 5px; /* 둥근 모서리 */
+  cursor: pointer; /* 클릭 가능한 모양 */
+  width: 100px; /* 버튼 크기 고정 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+}

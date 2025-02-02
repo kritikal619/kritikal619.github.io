@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    
+    <!-- 검색 엔진 최적화 (SEO) -->
+    <meta name="description" content="FC모바일 특성 재료 정보: 예리한 감아차기, 패스 마스터, 라인 브레이커등 특성 재료 선수 정보. fc모바일 예리한 감아치기 선수, fc모바일 화려한 걷어내기 선수, fc모바일 화려한 볼컨트롤, fc모바일 라인브레이커 선수, fc모바일 슬라이딩 태클 선호 선수, 피모 특성, 피파모바일, 피모, 피파모바일 특성, fc모바일 특성 트레이닝, fc모바일 특성 선수, fc모바일 특성 설명"> <!-- 작동함 -->
+    <meta name="keywords" content="FC모바일, 특성 재료, 패스 마스터, 라인 브레이커, 예리한 감아차기, 선수 정보, 오버롤, 넥슨">
+    <meta name="author" content="해리지팡이">
+    
+    <!-- Open Graph 데이터 -->
+    <meta property="og:title" content="FC모바일 특성 재료와 선수 정보"> <!-- 도대체 뭐하는지 모르겠다...-->
+    <meta property="og:description" content="FC모바일 특성 재료와 관련된 모든 정보를 제공합니다. 주요 특성과 선수 추천 오버롤을 확인하세요.">
+    <meta property="og:image" content="https://kritikal619.github.io/logo/Favicon.png">
+    <meta property="og:url" content="https://kritikal619.github.io/trait/">
+    <meta property="og:site_name" content="FC모바일 특성 정보">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./favicons/favicon.svg" />
+    <link rel="shortcut icon" href="./favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="피모 특성" />
+    <link rel="manifest" href="./favicons/site.webmanifest" />
+    <!-- 검증 메타 -->
+    <meta name="google-site-verification" content="mI4G1pPTEE7nMyQzFuWm0l5_AHAQiODcfXhTXQ2YMAc">
+    <meta name="naver-site-verification" content="47688a76eda92be8c9ba8435f8b91c9598a1bfc0">
+    <title>FC모바일 특성 재료</title>
+</head>
+<body>
+   
+    <h1 id="heading">FC모바일 특성 재료 정보</h1>
+    <h4 id="update">최근 업데이트 25.01.29 (줄임말 검색 기능 추가, 버그 수정)</h4>
+    <h4 id="info">공지: 이제 줄임말 검색이 가능합니다!</h4>
+    <h4 id="info2"></h4>
+ 
+    <A href="http://fcevol.kro.kr/"> 추가 정보: 진화 시뮬레이션을 하고 싶다면? </A>
+    <p>
+
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="선수, 오버롤, 시즌, 특성명 검색" onkeyup="filterTable()">
+    </div>
+    <div id="table-container">
+        <!-- JavaScript로 동적 데이터 추가 -->
+    </div>
+    <div id="question">
+      <br>
+      <span>원하는 특성이 없나요? <button id="copy-button">개발자에게 문의하기</button></span>
+    </div>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="close-modal">&times;</span>
+        <h3>공지사항</h3>
+        <p>이제 줄임말 검색이 가능합니다! <br>
+          최근 업데이트 25.01.29 (줄임말 검색 기능 추가, 버그 수정)
+        </p>
+        <button id="confirm">확인</button>
+      </div>
+    </div>
+    <div id="pagination"></div>
+    <br>
+    <br>
+    <div id="installPrompt" style="display: none; position: fixed; bottom: 20px; right: 20px; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.2); border-radius: 10px; padding: 16px; z-index: 1000;">
+      <p>앱을 설치하시겠습니까? (권장)</p>
+      <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+        <button id="installConfirm">설치하기</button>
+        <button id="installCancel">취소</button>
+        
+      </div>
+    </div>
+    
+    
+
+    <div id="wrap">
+      <section>
+      </section>
+      <footer>
+       <p>
+        <span>Data based on NEXON</span><br/>
+        <span>이메일 :<span id="email">jchae0619@gmail.com</span></span>
+        <button id="copy-button">복사</button><br/>
+
+        <span>© 2025 kritikal619. All Rights Reserved.</span>
+       </p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <script>
+        if ('serviceWorker' in navigator && 'PushManager' in window) {
+          navigator.serviceWorker.register('./sw.js')
+          .then(function(swReg) {
+            console.log('Service Worker is registered', swReg);
+    
+            return swReg.pushManager.getSubscription()
+            .then(function(subscription) {
+              if (subscription === null) {
+                return swReg.pushManager.subscribe({
+                  userVisibleOnly: true,
+                  applicationServerKey: urlB64ToUint8Array('BBSGXZN75_LHd1luWhNeXfSIgksvros8Sw5YUqvKuDn1tqRgF_WGKL4_4cW37UQ3VDofHBx5pgxsHm5xvv5NgZ4')
+                });
+              } else {
+                return subscription;
+              }
+            });
+          })
+          .then(function(subscription) {
+            console.log('User is subscribed:', subscription);
+            scheduleDailyNotification(subscription);
+          })
+          .catch(function(error) {
+            console.error('Service Worker Error', error);
+          });
+        }
+    
+        function urlB64ToUint8Array(base64String) {
+          const padding = '='.repeat((4 - base64String.length % 4) % 4);
+          const base64 = (base64String + padding)
+            .replace(/\-/g, '+')
+            .replace(/_/g, '/');
+          
+          const rawData = window.atob(base64);
+          const outputArray = new Uint8Array(rawData.length);
+          
+          for (let i = 0; i < rawData.length; ++i) {
+            outputArray[i] = rawData.charCodeAt(i);
+          }
+          return outputArray;
+        }
+    
+        function scheduleDailyNotification(subscription) {
+          function calculateTimeout() {
+            const now = new Date();
+            const target = new Date();
+            target.setHours(4, 15, 0, 0); // 시간
+    
+            if (now > target) {
+              target.setDate(target.getDate() + 1); // 다음 날로 설정
+            }
+    
+            return target - now;
+          }
+    
+          function sendNotification() {
+            const payload = JSON.stringify({
+              title: 'FC모바일 특성 정보!',
+              body: '필요한 특성이 있으신가요? 특성을 달아주세요!',
+              icon: 'Favicon.png',
+            
+            });
+    
+            navigator.serviceWorker.ready.then(function(swRegistration) {
+              swRegistration.showNotification('FC모바일 특성 정보!', {
+                body: '필요한 특성이 있으신가요? 특성을 달아주세요!',
+                icon: 'Favicon.png',
+                
+              });
+            });
+    
+            // 다음 날 알림 설정
+            setTimeout(sendNotification, 24 * 60 * 60 * 1000); // 24시간 후 다시 실행
+          }
+    
+          // 초기 타이머 설정
+          setTimeout(sendNotification, calculateTimeout());
+        }
+        function copyEmail() {
+      // 이메일 텍스트를 가져오기
+      var emailText = document.getElementById("email");
+
+      // 이메일을 선택
+      emailText.select();
+      emailText.setSelectionRange(0, 99999); // 모바일에서 선택 영역 확장
+
+      // 이메일을 클립보드에 복사
+      document.execCommand("copy");
+
+      // 알림
+      alert("이메일이 복사되었습니다: " + emailText.value);
+        }
+
+      (function () {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("./sw.js");
+        }
+      })();
+      </script>
+</body>
+</html>
