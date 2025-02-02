@@ -1,7 +1,7 @@
 {
   "name": "FC모바일 특성",
   "short_name": "피모 특성",
-  "id": "/trait/favicons/index.html",
+  "id": "/favicons/index.html",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
