@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kritikal619.github.io/trait/sitemap.xml
