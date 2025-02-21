@@ -1,6 +1,6 @@
 {
-  "name": "FC모바일 특성",
-  "short_name": "피모 특성",
+  "name": "피모툴킷-FC모바일",
+  "short_name": "피모툴킷",
   "id": "/favicons/index.html",
   "start_url": "/index.html",
   "display": "standalone",
