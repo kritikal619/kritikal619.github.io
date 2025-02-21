@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
-    
-    <!-- 검색 엔진 최적화 (SEO) -->
-    <meta name="description" content="피모툴킷-FC모바일 (특성 재료, 카드 제작기, 진화 시뮬레이터)"> <!-- 작동함 -->
-    <meta name="keywords" content="FC모바일, 특성 재료, 패스 마스터, 라인 브레이커, 예리한 감아차기, 선수 정보, 오버롤, 넥슨">
-    <meta name="author" content="해리지팡이">
-    
-    <!-- Open Graph 데이터 -->
-    <meta property="og:title" content="피모툴킷-FC모바일 (특성 재료, 카드 제작기, 진화 시뮬레이터)"> <!-- 도대체 뭐하는지 모르겠다...-->
-    <meta property="og:description" content="피모툴킷-FC모바일 (특성 재료, 카드 제작기, 진화 시뮬레이터)">
-    <meta property="og:image" content="https://kritikal619.github.io/logo/Favicon.png">
-    <meta property="og:url" content="https://kritikal619.github.io/trait/">
-    <meta property="og:site_name" content="피모툴킷-FC모바일">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./favicons/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="./favicons/favicon.svg" />
-    <link rel="shortcut icon" href="./favicons/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="피모툴킷" />
-    <link rel="manifest" href="./favicons/site.webmanifest" />
-    <!-- 검증 메타 -->
-    <meta name="google-site-verification" content="mI4G1pPTEE7nMyQzFuWm0l5_AHAQiODcfXhTXQ2YMAc">
-    <meta name="naver-site-verification" content="47688a76eda92be8c9ba8435f8b91c9598a1bfc0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- 검색 엔진 최적화 (SEO) -->
+  <meta name="description" content="피모툴킷-FC모바일 (특성 재료, 카드 제작기, 진화 시뮬레이터)">
+  <meta name="keywords" content="FC모바일, 특성 재료, 패스 마스터, 라인 브레이커, 예리한 감아차기, 선수 정보, 오버롤, 넥슨">
+  <meta name="author" content="해리지팡이">
+  
+  <!-- Open Graph 데이터 -->
+  <meta property="og:title" content="피모툴킷-FC모바일 (특성 재료, 카드 제작기, 진화 시뮬레이터)">
+  <meta property="og:description" content="피모툴킷-FC모바일 (특성 재료, 카드 제작기, 진화 시뮬레이터)">
+  <meta property="og:image" content="https://kritikal619.github.io/logo/Favicon.png">
+  <meta property="og:url" content="https://kritikal619.github.io/trait/">
+  <meta property="og:site_name" content="FC모바일 특성 정보">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./favicons/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="./favicons/favicon.svg" />
+  <link rel="shortcut icon" href="./favicons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="피모 특성" />
+  <link rel="manifest" href="./favicons/site.webmanifest" />
+  
+  <!-- 검증 메타 -->
+  <meta name="google-site-verification" content="mI4G1pPTEE7nMyQzFuWm0l5_AHAQiODcfXhTXQ2YMAc">
+  <meta name="naver-site-verification" content="47688a76eda92be8c9ba8435f8b91c9598a1bfc0">
+  
   <title>피모툴킷-FC모바일</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -39,11 +41,14 @@
       box-sizing: border-box;
     }
     html, body {
-      height: 100%;
+      min-height: 100vh;
       font-family: 'Roboto', sans-serif;
-      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
     }
-    /* 배경 이미지 설정 (url() 사용) */
+    /* 배경 이미지 설정 */
     body {
       background: url('hello.webp') no-repeat center center fixed;
       background-size: cover;
@@ -64,12 +69,11 @@
       z-index: 2;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      height: 100%;
       text-align: center;
       color: #fff;
       animation: fadeIn 2s ease;
+      padding: 20px;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-30px); }
@@ -89,6 +93,8 @@
     .buttons {
       display: flex;
       gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     button {
       background: rgba(255,255,255,0.2);
@@ -104,6 +110,23 @@
       background: rgba(255,255,255,0.3);
       border-color: rgba(255,255,255,0.5);
       transform: scale(1.05);
+    }
+    /* 모바일 최적화 */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+      .buttons {
+        flex-direction: column;
+        gap: 15px;
+      }
+      button {
+        padding: 12px 20px;
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
