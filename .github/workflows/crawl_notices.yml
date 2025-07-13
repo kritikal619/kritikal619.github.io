@@ -1,0 +1,36 @@
+name: Crawl FC Mobile Notices
+
+on:
+  schedule:
+    - cron: '0 */1 * * *'  # 6시간마다 실행 (UTC 기준)
+  workflow_dispatch:  # 수동 실행 옵션
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright requests beautifulsoup4
+          python -m playwright install chromium
+
+      - name: Run crawler
+        run: |
+          cd api
+          python fetch_notices_playwright.py
+          
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add api/notices.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update notices.json [automated]" && git push)
